@@ -1,4 +1,4 @@
-package com.calculatorapp;
+package dev.fabsi.apps.calculator;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

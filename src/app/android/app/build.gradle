@@ -93,9 +93,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.calculatorapp"
+    namespace "dev.fabsi.apps.calculator"
     defaultConfig {
-        applicationId "com.calculatorapp"
+        applicationId "dev.fabsi.apps.calculator"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

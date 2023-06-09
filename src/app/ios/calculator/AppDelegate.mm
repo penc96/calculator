@@ -6,7 +6,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  self.moduleName = @"CalculatorApp";
+  self.moduleName = @"calculator";
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
 
