@@ -1,50 +1,71 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { globalStyles } from '../../core';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-export const CalculatorNumbers = () => {
-  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-
+export const CalculatorNumbers = ({
+  addNumber,
+}: {
+  addNumber: (value: string) => void;
+}) => {
   return (
     <>
       <View style={styles.calculatorNumbersCard}>
         <View style={styles.calculatorNumbersContent}>
           <View style={styles.calculatorNumbersRow}>
-            <View style={styles.calculatorNumbersItem}>
+            <TouchableOpacity
+              style={styles.calculatorNumbersItem}
+              onPress={() => addNumber('1')}>
               <Text>1</Text>
-            </View>
-            <View style={styles.calculatorNumbersItem}>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.calculatorNumbersItem}
+              onPress={() => addNumber('2')}>
               <Text>2</Text>
-            </View>
-            <View style={styles.calculatorNumbersItem}>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.calculatorNumbersItem}
+              onPress={() => addNumber('3')}>
               <Text>3</Text>
-            </View>
+            </TouchableOpacity>
           </View>
           <View style={styles.calculatorNumbersRow}>
-            <View style={styles.calculatorNumbersItem}>
+            <TouchableOpacity
+              style={styles.calculatorNumbersItem}
+              onPress={() => addNumber('4')}>
               <Text>4</Text>
-            </View>
-            <View style={styles.calculatorNumbersItem}>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.calculatorNumbersItem}
+              onPress={() => addNumber('5')}>
               <Text>5</Text>
-            </View>
-            <View style={styles.calculatorNumbersItem}>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.calculatorNumbersItem}
+              onPress={() => addNumber('6')}>
               <Text>6</Text>
-            </View>
+            </TouchableOpacity>
           </View>
           <View style={styles.calculatorNumbersRow}>
-            <View style={styles.calculatorNumbersItem}>
+            <TouchableOpacity
+              style={styles.calculatorNumbersItem}
+              onPress={() => addNumber('7')}>
               <Text>7</Text>
-            </View>
-            <View style={styles.calculatorNumbersItem}>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.calculatorNumbersItem}
+              onPress={() => addNumber('8')}>
               <Text>8</Text>
-            </View>
-            <View style={styles.calculatorNumbersItem}>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.calculatorNumbersItem}
+              onPress={() => addNumber('9')}>
               <Text>9</Text>
-            </View>
+            </TouchableOpacity>
           </View>
           <View style={styles.calculatorNumbersRow}>
             <View style={styles.calculatorNumbersItem}></View>
-            <View style={styles.calculatorNumbersItem}>
+            <View
+              style={styles.calculatorNumbersItem}
+              onPress={() => addNumber('0')}>
               <Text>0</Text>
             </View>
             <View style={styles.calculatorNumbersItem}></View>
@@ -58,11 +79,8 @@ export const CalculatorNumbers = () => {
 const styles = StyleSheet.create({
   calculatorNumbersCard: {
     flex: 1,
-    borderRadius: 20,
-    margin: 10,
   },
   calculatorNumbersContent: {
-    padding: 10,
     flex: 1,
   },
   calculatorNumbersRow: {

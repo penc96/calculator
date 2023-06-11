@@ -1,9 +1,24 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { globalStyles } from '../../core/styles';
-import { CalculatorHeader, CalculatorNumbers } from '../components';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+import {
+  CalculatorHeader,
+  CalculatorInput,
+  CalculatorNumbers,
+  CalculatorOperators,
+} from '../components';
 
 export const CalculatorPage = () => {
+
+  const [calculation, setCalculation] = useState<string>('');
+
+  useEffect(() => {
+    console.log(calculation);
+  }, [calculation]);
+
+  const addCalculation = (value: string): void => {
+    setCalculation(prev => prev + value);
+  };
+
   return (
     <>
       <View style={styles.calculatorGrid}>
@@ -11,15 +26,14 @@ export const CalculatorPage = () => {
           <CalculatorHeader />
         </View>
         <View style={styles.calculatorNumbers}>
-          <CalculatorNumbers />
+          <CalculatorNumbers addNumber={addCalculation} />
         </View>
         <View style={styles.calculatorOperators}>
-          <Text>Hello CalculatorOperators</Text>
+          <CalculatorOperators addOperator={addCalculation} />
         </View>
-        {/*
-        <CalculatorOperators />
-        <CalculatorInput />
-        */}
+        <View style={styles.calculatorInput}>
+          <CalculatorInput calculation={calculation} />
+        </View>
       </View>
     </>
   );
@@ -31,12 +45,19 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   calculatorHeaderCard: {
-    flex: 0.2,
+    flex: 0.1,
+    margin: 10,
   },
   calculatorNumbers: {
-    flex: 0.5,
+    flex: 0.6,
+    margin: 10,
   },
   calculatorOperators: {
-    flex: 0.3,
+    flex: 0.1,
+    margin: 10,
+  },
+  calculatorInput: {
+    flex: 0.2,
+    margin: 10,
   },
 });

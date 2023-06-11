@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { globalStyles } from '../../core';
 
 export const CalculatorHeader = () => {
   return (
@@ -17,8 +16,7 @@ export const CalculatorHeader = () => {
 const styles = StyleSheet.create({
   calculatorHeaderCard: {
     borderRadius: 20,
-    margin: 20,
-    height: 100,
+    flex: 1,
     backgroundColor: '#DAE5D0',
   },
   calculatorHeaderContent: {
@@ -29,7 +27,7 @@ const styles = StyleSheet.create({
     flex: 1,
     verticalAlign: 'middle',
     textAlign: 'center',
-    fontSize: 30,
+    fontSize: 24,
     fontWeight: 'bold',
   },
 });
