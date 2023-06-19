@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 export const CalculatorNumbers = ({
   addNumber,
@@ -11,61 +11,61 @@ export const CalculatorNumbers = ({
       <View style={styles.calculatorNumbersCard}>
         <View style={styles.calculatorNumbersContent}>
           <View style={styles.calculatorNumbersRow}>
-            <TouchableOpacity
+            <View
               style={styles.calculatorNumbersItem}
-              onPress={() => addNumber('1')}>
+              onTouchEnd={() => addNumber('1')}>
               <Text>1</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
+            </View>
+            <View
               style={styles.calculatorNumbersItem}
-              onPress={() => addNumber('2')}>
+              onTouchEnd={() => addNumber('1')}>
               <Text>2</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
+            </View>
+            <View
               style={styles.calculatorNumbersItem}
-              onPress={() => addNumber('3')}>
+              onTouchEnd={() => addNumber('3')}>
               <Text>3</Text>
-            </TouchableOpacity>
+            </View>
           </View>
           <View style={styles.calculatorNumbersRow}>
-            <TouchableOpacity
+            <View
               style={styles.calculatorNumbersItem}
-              onPress={() => addNumber('4')}>
+              onTouchEnd={() => addNumber('4')}>
               <Text>4</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
+            </View>
+            <View
               style={styles.calculatorNumbersItem}
-              onPress={() => addNumber('5')}>
+              onTouchEnd={() => addNumber('5')}>
               <Text>5</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
+            </View>
+            <View
               style={styles.calculatorNumbersItem}
-              onPress={() => addNumber('6')}>
+              onTouchEnd={() => addNumber('6')}>
               <Text>6</Text>
-            </TouchableOpacity>
+            </View>
           </View>
           <View style={styles.calculatorNumbersRow}>
-            <TouchableOpacity
+            <View
               style={styles.calculatorNumbersItem}
-              onPress={() => addNumber('7')}>
+              onTouchEnd={() => addNumber('7')}>
               <Text>7</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
+            </View>
+            <View
               style={styles.calculatorNumbersItem}
-              onPress={() => addNumber('8')}>
+              onTouchEnd={() => addNumber('8')}>
               <Text>8</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
+            </View>
+            <View
               style={styles.calculatorNumbersItem}
-              onPress={() => addNumber('9')}>
+              onTouchEnd={() => addNumber('9')}>
               <Text>9</Text>
-            </TouchableOpacity>
+            </View>
           </View>
           <View style={styles.calculatorNumbersRow}>
             <View style={styles.calculatorNumbersItem}></View>
             <View
               style={styles.calculatorNumbersItem}
-              onPress={() => addNumber('0')}>
+              onTouchEnd={() => addNumber('0')}>
               <Text>0</Text>
             </View>
             <View style={styles.calculatorNumbersItem}></View>

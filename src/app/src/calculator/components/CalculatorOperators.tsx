@@ -10,31 +10,36 @@ export const CalculatorOperators = ({
     <>
       <View style={styles.calculatorOperatorsCard}>
         <View style={styles.calculatorOperatorsContent}>
-          <TouchableOpacity
+          <View
             style={styles.calculatorOperatorsItem}
-            onPress={() => addOperator('+')}>
+            onTouchEnd={() => addOperator('+')}>
             <Text>+</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
+          </View>
+          <View
             style={styles.calculatorOperatorsItem}
-            onPress={() => addOperator('-')}>
+            onTouchEnd={() => addOperator('-')}>
             <Text>-</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
+          </View>
+          <View
             style={styles.calculatorOperatorsItem}
-            onPress={() => addOperator('*')}>
+            onTouchEnd={() => addOperator('*')}>
             <Text>*</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
+          </View>
+          <View
             style={styles.calculatorOperatorsItem}
-            onPress={() => addOperator('/')}>
+            onTouchEnd={() => addOperator('/')}>
             <Text>/</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
+          </View>
+          <View
             style={styles.calculatorOperatorsItem}
-            onPress={() => addOperator('^')}>
+            onTouchEnd={() => addOperator('^')}>
             <Text>^</Text>
-          </TouchableOpacity>
+          </View>
+          <View
+            style={styles.calculatorOperatorsItem}
+            onTouchEnd={() => addOperator('=')}>
+            <Text>=</Text>
+          </View>
         </View>
       </View>
     </>

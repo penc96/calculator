@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import {
   CalculatorHeader,
@@ -6,17 +6,21 @@ import {
   CalculatorNumbers,
   CalculatorOperators,
 } from '../components';
+let mathjs = require('mathjs');
 
 export const CalculatorPage = () => {
+  const [calculation, setCalculation] = useState<string[]>([]);
 
-  const [calculation, setCalculation] = useState<string>('');
+  const add = (value: string) => {
+    setCalculation(prev => {
+      const parts = [...prev];
+      if (value === '=') {
+        return [mathjs.evaluate(parts.join(' '))];
+      }
 
-  useEffect(() => {
-    console.log(calculation);
-  }, [calculation]);
-
-  const addCalculation = (value: string): void => {
-    setCalculation(prev => prev + value);
+      parts.push(value);
+      return parts;
+    });
   };
 
   return (
@@ -26,10 +30,10 @@ export const CalculatorPage = () => {
           <CalculatorHeader />
         </View>
         <View style={styles.calculatorNumbers}>
-          <CalculatorNumbers addNumber={addCalculation} />
+          <CalculatorNumbers addNumber={add} />
         </View>
         <View style={styles.calculatorOperators}>
-          <CalculatorOperators addOperator={addCalculation} />
+          <CalculatorOperators addOperator={add} />
         </View>
         <View style={styles.calculatorInput}>
           <CalculatorInput calculation={calculation} />
